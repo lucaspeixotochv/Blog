@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const RegisterContainer = styled.div`
-  padding: 3rem 5rem;
   background: var(--gradient);
   min-height: 100vh;
   color: var(--white);

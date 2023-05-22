@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as S from "./style";
+import axios from "axios";
 import uuid from "react-uuid";
 import Footer from "../../components/Footer";
 
@@ -12,11 +13,11 @@ function Register({ articles, setArticles }) {
   const [valueUserName, setValueUserName] = useState("");
   const [valueUserArea, setValueUserArea] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setArticles([
-      ...articles,
-      {
+
+    try {
+      const res = await axios.post("http://localhost:8800", {
         id: uuid(),
         backgroundImg: valuebackgroundImg,
         category: valueCategory,
@@ -25,20 +26,36 @@ function Register({ articles, setArticles }) {
         userImg: valueUserImg,
         userName: valueUserName,
         userArea: valueUserArea,
-      },
-    ]);
+      });
 
-    setValueBackgroundImg("");
-    setValueCategory("");
-    setValueTitle("");
-    setValueTitle("");
-    setValueDescription("");
-    setValueUserImg("");
-    setValueUserName("");
-    setValueUserArea("");
+      setArticles([
+        ...articles,
+        {
+          id: res.data.id,
+          backgroundImg: valuebackgroundImg,
+          category: valueCategory,
+          title: valueTitle,
+          description: valueDescription,
+          userImg: valueUserImg,
+          userName: valueUserName,
+          userArea: valueUserArea,
+        },
+      ]);
 
-    alert("Artigo publicado com sucesso!");
+      setValueBackgroundImg("");
+      setValueCategory("");
+      setValueTitle("");
+      setValueDescription("");
+      setValueUserImg("");
+      setValueUserName("");
+      setValueUserArea("");
+
+      alert("Artigo publicado com sucesso!");
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <S.RegisterContainer>
       <S.Title>Criar Noticia</S.Title>

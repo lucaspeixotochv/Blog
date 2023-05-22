@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import Article from "../../components/Article";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import * as S from "./style";
 
-function Home({ articles }) {
+function Home({ articles, setArticles }) {
   const [FilterArticles, setFilterArticles] = useState([]);
+  const getArticles = async () => {
+    try {
+      const res = await axios.get("http://localhost:8800");
+      setArticles(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, [articles]);
 
   const ArticlesFilter = (title) => {
     const lowercaseTitle = title.toLowerCase();

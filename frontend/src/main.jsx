@@ -10,9 +10,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GlobalStyle />
     <BrowserRouter>
-      <Routes>
+      <App />
+      {/* <Routes>
         <Route path="/" element={<App />} />
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   </React.StrictMode>
 );
