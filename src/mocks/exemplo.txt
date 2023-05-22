@@ -1,0 +1,46 @@
+    {
+      id: uuid(),
+      backgroundImg:
+        "https://static-cse.canva.com/blob/572626/1.magebyRodionKutsaevviaUnsplash.jpg",
+      category: "Internet",
+      title: "How to design a product that can grow itself 10x in year",
+      description:
+        "Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor. Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolorAuctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolorAuctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor",
+      userImg: "http://github.com/lucaspeixotochv.png",
+      useName: "Lucas Peixoto",
+      userArea: "Developer",
+    },
+    {
+      id: uuid(),
+      backgroundImg:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2ONMYXbyiHOZpdOfuBaYK3FKXYhzdHO1bQ&usqp=CAU",
+      category: "University",
+      title: "How to use HTML and CSS",
+      description:
+        "Auctor Porta. Augue vitae diam mauris faucibus blandit elit per, feugiat leo dui orci. Etiam vestibulum. Nostra netus per conubia dolor.",
+      userImg: "http://github.com/dutramateus.png",
+      useName: "Mateus Dutra",
+      userArea: "Developer",
+    },
+    {
+      id: uuid(),
+      backgroundImg:
+        "https://imgv3.fotor.com/images/videoImage/Change-image-background-online-in-seconds-with-Fotors-AI-background-changer.jpg",
+      category: "Design",
+      title: "How to use Figma",
+      description: "bla bla bla",
+      userImg: "http://github.com/nicolasamedeiros.png",
+      useName: "Nicolas",
+      userArea: "Designer",
+    },
+    {
+      id: uuid(),
+      backgroundImg:
+        "https://imgv3.fotor.com/images/videoImage/Change-image-background-online-in-seconds-with-Fotors-AI-background-changer.jpg",
+      category: "Design",
+      title: "How to use Figma",
+      description: "bla bla bla",
+      userImg: "http://github.com/nicolasamedeiros.png",
+      useName: "Nicolas",
+      userArea: "Designer",
+    },
