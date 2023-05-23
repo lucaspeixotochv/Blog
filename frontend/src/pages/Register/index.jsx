@@ -48,7 +48,7 @@ function Register({ articles, setArticles }) {
       setValueCategory("");
       setValueTitle("");
       setValueDescription("");
-      setValueUserImg("");
+      setValueUserImg("http://github.com/SeuUsuario.png");
       setValueUserName("");
       setValueUserArea("");
 
@@ -60,7 +60,7 @@ function Register({ articles, setArticles }) {
 
   return (
     <S.RegisterContainer>
-      <S.Title>Criar Noticia</S.Title>
+      <S.Title>Novo Artigo</S.Title>
       <S.Form onSubmit={handleSubmit}>
         <S.FormContainer>
           <S.Label htmlFor="userArea">Área de usuário</S.Label>
@@ -68,6 +68,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="userArea"
             value={valueUserArea}
+            placeholder="Ex.: Desenvolvedor"
             onChange={(e) => setValueUserArea(e.target.value)}
             required
           />
@@ -78,6 +79,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="category"
             value={valueCategory}
+            placeholder="Ex.: Front End"
             onChange={(e) => setValueCategory(e.target.value)}
             required
           />
@@ -88,6 +90,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="title"
             value={valueTitle}
+            placeholder="Ex.: Como criar um site"
             onChange={(e) => setValueTitle(e.target.value)}
             required
           />
@@ -98,6 +101,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="description"
             value={valueDescription}
+            placeholder="Ex.: Para criar um site devemos utilizar..."
             onChange={(e) => setValueDescription(e.target.value)}
             required
           />
@@ -108,6 +112,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="userImg"
             value={valueUserImg}
+            placeholder="Ex.: http://site.com/urlDaImagem"
             onChange={(e) => setValueUserImg(e.target.value)}
             required
           />
@@ -118,6 +123,7 @@ function Register({ articles, setArticles }) {
             type="text"
             id="userName"
             value={valueUserName}
+            placeholder="Ex.: Nome Sobrenome"
             onChange={(e) => setValueUserName(e.target.value)}
             required
           />
@@ -128,11 +134,15 @@ function Register({ articles, setArticles }) {
             type="text"
             id="backgroundImg"
             value={valuebackgroundImg}
+            placeholder="Ex.: http://site.com/urlDaImagem"
             onChange={(e) => setValueBackgroundImg(e.target.value)}
             required
           />
         </S.FormContainer>
-        <S.Btn type="submit">Publicar</S.Btn>
+        <S.Btn type="submit">
+          <S.StyledNewsPaperIcon />
+          Publicar
+        </S.Btn>
       </S.Form>
       <Footer />
       <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />

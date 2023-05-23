@@ -3,12 +3,14 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 export const HeaderContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: var(--white);
 `;
 
-export const Logo = styled.h1``;
+export const Logo = styled.h1`
+  color: var(--blue-dark);
+`;
 
 export const HeaderList = styled.ul`
   display: flex;

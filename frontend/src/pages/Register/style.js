@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { HiOutlineNewspaper } from "react-icons/hi";
 
 export const RegisterContainer = styled.div`
   background: var(--gradient);
@@ -14,6 +15,17 @@ export const Title = styled.h3`
   color: var(--white);
   font-size: 2.5rem;
   text-transform: uppercase;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    margin-top: 0.2rem;
+    background: var(--white);
+  }
 `;
 
 export const Form = styled.form`
@@ -31,14 +43,20 @@ export const FormContainer = styled.div`
 `;
 
 export const Label = styled.label`
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
+  font-weight: 500;
+  font-size: 1.2rem;
 `;
 export const Input = styled.input`
-  padding: 0.8rem;
+  padding: 0.8rem 1rem;
   outline: none;
   border: none;
   border-radius: 0.5rem;
+  color: var(--blue-gray);
+  font-weight: 500;
+
+  &::placeholder {
+    font-size: 1rem;
+  }
 `;
 
 export const Btn = styled.button`
@@ -49,4 +67,20 @@ export const Btn = styled.button`
   grid-column: span 2;
   width: 50%;
   margin: 0 auto;
+  background-color: var(--blue-gray);
+  color: var(--white);
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &:hover {
+    scale: 0.98;
+    transition: 0.5s;
+  }
+`;
+
+export const StyledNewsPaperIcon = styled(HiOutlineNewspaper)`
+  font-size: 1.2rem;
 `;

@@ -7,11 +7,30 @@ export const GlobalStyle = createGlobalStyle`
         --gradient : linear-gradient(180deg, #373951 0%, #111827 100%);
         --white: #fff;
         --whitesmoke: rgba(255,255,255,0.6);
+        --blue-gray: #373951;
+        --blue-dark: #111827;
+        --blue-dark--hover: #111821;
     }
 
     * {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
+    }
+
+    body::-webkit-scrollbar {
+        width: 15px;            
+    }
+
+    body::-webkit-scrollbar-track {
+        background: var(--blue-gray);     
+    }
+
+    body::-webkit-scrollbar-thumb {
+            border-radius: 0.5rem;    
+            background-color: var(--blue-dark);    
+        &:active {
+            background-color: var(--blue-dark--hover);
+        }
     }
 `;

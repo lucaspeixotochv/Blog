@@ -8,6 +8,12 @@ export const ArticleContainer = styled.div`
   /* justify-content: space-evenly; */
   gap: 1rem;
   cursor: pointer;
+  transition: 0.75s;
+
+  &:hover {
+    scale: 1.04;
+    transition: 0.75s;
+  }
 `;
 
 export const Image = styled.img`
