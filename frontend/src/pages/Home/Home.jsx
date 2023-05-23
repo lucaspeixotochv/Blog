@@ -7,6 +7,8 @@ import * as S from "./style";
 
 function Home({ articles, setArticles }) {
   const [FilterArticles, setFilterArticles] = useState([]);
+  const [value, setValue] = useState("");
+
   const getArticles = async () => {
     try {
       const res = await axios.get("http://localhost:8800");
@@ -20,19 +22,21 @@ function Home({ articles, setArticles }) {
     getArticles();
   }, [articles]);
 
-  const ArticlesFilter = (title) => {
-    const lowercaseTitle = title.toLowerCase();
-
+  useEffect(() => {
+    const lowercaseSearchValue = value.toLowerCase();
     const filteredArticles = articles.filter((article) =>
-      article.title.toLowerCase().includes(lowercaseTitle)
+      article.title.toLowerCase().includes(lowercaseSearchValue)
     );
     setFilterArticles(filteredArticles);
+  }, [value]);
+
+  const handleSearch = (e) => {
+    setValue(e.target.value);
   };
 
-  console.log(FilterArticles);
   return (
     <S.HomeContainer>
-      <Header filterArticles={ArticlesFilter} />
+      <Header handleSearch={handleSearch} />
       <S.ArticleContainer>
         {FilterArticles.length > 0
           ? FilterArticles.map((article) => (

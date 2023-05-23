@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import * as S from "./style";
 
-function Header({ filterArticles }) {
+function Header({ handleSearch }) {
   const category = ["UI Design", "Front end", "Back end"];
-
-  const [value, setValue] = useState("");
-
-  console.log(value);
 
   return (
     <S.HeaderContainer>
@@ -21,8 +17,7 @@ function Header({ filterArticles }) {
           type="text"
           placeholder="Search"
           onChange={(e) => {
-            setValue(e.target.value);
-            filterArticles(value);
+            handleSearch(e);
           }}
         />
         <S.StyledSearchIcon />

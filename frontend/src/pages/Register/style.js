@@ -13,6 +13,7 @@ export const RegisterContainer = styled.div`
 export const Title = styled.h3`
   color: var(--white);
   font-size: 2.5rem;
+  text-transform: uppercase;
 `;
 
 export const Form = styled.form`
@@ -46,4 +47,6 @@ export const Btn = styled.button`
   padding: 1rem 0;
   cursor: pointer;
   grid-column: span 2;
+  width: 50%;
+  margin: 0 auto;
 `;

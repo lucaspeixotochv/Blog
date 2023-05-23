@@ -3,6 +3,8 @@ import * as S from "./style";
 import axios from "axios";
 import uuid from "react-uuid";
 import Footer from "../../components/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register({ articles, setArticles }) {
   const [valuebackgroundImg, setValueBackgroundImg] = useState("");
@@ -50,7 +52,7 @@ function Register({ articles, setArticles }) {
       setValueUserName("");
       setValueUserArea("");
 
-      alert("Artigo publicado com sucesso!");
+      toast.success("Artigo publicado com sucesso!");
     } catch (error) {
       console.log(error);
     }
@@ -133,6 +135,7 @@ function Register({ articles, setArticles }) {
         <S.Btn type="submit">Publicar</S.Btn>
       </S.Form>
       <Footer />
+      <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
     </S.RegisterContainer>
   );
 }
