@@ -9,9 +9,10 @@ export const ArticleContainer = styled.div`
   gap: 1rem;
   cursor: pointer;
   transition: 0.75s;
+  transform: translateZ(0);
 
   &:hover {
-    scale: 1.04;
+    transform: scale(1.04);
     transition: 0.75s;
   }
 `;

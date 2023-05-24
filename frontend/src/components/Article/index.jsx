@@ -9,9 +9,20 @@ function Article({
   userImg,
   userName,
   userArea,
+  handleOpenModal,
 }) {
+  const handleClick = () => {
+    handleOpenModal({
+      backgroundImg,
+      title,
+      description,
+      userImg,
+      userName,
+      userArea,
+    });
+  };
   return (
-    <S.ArticleContainer>
+    <S.ArticleContainer onClick={handleClick}>
       <S.Image src={backgroundImg} alt="background" />
       <S.Category>{category}</S.Category>
       <S.Title>{title}</S.Title>

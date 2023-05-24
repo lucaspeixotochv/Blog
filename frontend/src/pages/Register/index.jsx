@@ -128,7 +128,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer style={{ gridColumn: "span 2" }}>
+        <S.BackgroundContainer>
           <S.Label htmlFor="backgroundImg">Link da imagem</S.Label>
           <S.Input
             type="text"
@@ -138,7 +138,7 @@ function Register({ articles, setArticles }) {
             onChange={(e) => setValueBackgroundImg(e.target.value)}
             required
           />
-        </S.FormContainer>
+        </S.BackgroundContainer>
         <S.Btn type="submit">
           <S.StyledNewsPaperIcon />
           Publicar

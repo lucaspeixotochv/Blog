@@ -9,6 +9,10 @@ export const RegisterContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media screen and (max-width: 720px) {
+    padding: 2rem 0;
+  }
 `;
 
 export const Title = styled.h3`
@@ -34,12 +38,28 @@ export const Form = styled.form`
   width: 50%;
   gap: 1rem;
   margin: 3rem 0;
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+    width: 80%;
+  }
 `;
 
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`;
+
+export const BackgroundContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  grid-column: span 2;
+
+  @media screen and (max-width: 720px) {
+    grid-column: 1;
+  }
 `;
 
 export const Label = styled.label`
@@ -74,10 +94,15 @@ export const Btn = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  transform: translateZ(0);
 
   &:hover {
-    scale: 0.98;
+    transform: scale(0.98);
     transition: 0.5s;
+  }
+
+  @media screen and (max-width: 720px) {
+    grid-column: 1;
   }
 `;
 

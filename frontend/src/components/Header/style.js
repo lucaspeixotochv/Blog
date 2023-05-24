@@ -6,10 +6,16 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   color: var(--white);
+
+  @media screen and (max-width: 720px) {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
 `;
 
 export const Logo = styled.h1`
   color: var(--blue-dark);
+  text-align: center;
 `;
 
 export const HeaderList = styled.ul`
@@ -35,7 +41,7 @@ export const HeaderSearch = styled.input`
   background-color: #1f2937;
   border: none;
   border-radius: 1rem;
-  padding: 0.5rem 1rem 0.5rem 3rem;
+  padding: 0.7rem 1rem 0.7rem 3rem;
   outline: none;
   color: var(--white);
 
