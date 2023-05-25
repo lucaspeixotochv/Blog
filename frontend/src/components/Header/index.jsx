@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Header({ handleSearch }) {
+  useEffect(() => {
+    Aos.refresh({ duration: 1500 });
+  }, []);
   return (
     <S.HeaderContainer>
-      <S.Logo>UCB Technology</S.Logo>
+      <S.Logo data-aos="fade-right">UCB Technology</S.Logo>
 
-      <S.HeaderInputContainer>
+      <S.HeaderInputContainer data-aos="fade-left">
         <S.HeaderSearch
           type="text"
           placeholder="Search"

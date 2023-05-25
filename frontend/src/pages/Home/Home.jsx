@@ -4,7 +4,14 @@ import Article from "../../components/Article";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import * as S from "./style";
-import Modal from "react-modal";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  CardMedia,
+} from "@mui/material";
 
 function Home({ articles, setArticles }) {
   const [FilterArticles, setFilterArticles] = useState([]);
@@ -56,35 +63,26 @@ function Home({ articles, setArticles }) {
 
   return (
     <>
-      <Modal
-        isOpen={openModal}
-        onRequestClose={closeModal}
-        style={{
-          overlay: { backgroundColor: "rgba(255, 255, 255, 0.1)" },
-          content: {
-            height: "70%",
-            width: "50%",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            padding: 0,
-            border: "none",
-          },
-        }}
+      <Dialog
+        open={openModal}
+        onClose={closeModal}
+        maxWidth="sm"
+        fullWidth
+        maxHeight="50%"
       >
-        <S.ModalContainer>
-          <S.ModalImg src={modalData.backgroundImg} alt={modalData.title} />
-          <S.ModalTextContainer>
-            <S.Text>
-              <S.ModalTitle>{modalData.title}</S.ModalTitle>
-              <S.ModalDescription>{modalData.description}</S.ModalDescription>
-            </S.Text>
-            <S.ModalCloseBtn onClick={() => setOpenModal(!openModal)}>
-              Sair
-            </S.ModalCloseBtn>
-          </S.ModalTextContainer>
-        </S.ModalContainer>
-      </Modal>
+        <CardMedia
+          component="img"
+          src={modalData.backgroundImg}
+          alt={modalData.title}
+          sx={{ maxHeight: "250px" }}
+        />
+        <DialogTitle>{modalData.title}</DialogTitle>
+        <DialogContent>{modalData.description}</DialogContent>
+        <DialogActions>
+          <Button onClick={closeModal}>Sair</Button>
+          <Button>Exluir</Button>
+        </DialogActions>
+      </Dialog>
       <S.HomeContainer>
         <Header handleSearch={handleSearch} />
         <S.ArticleContainer>

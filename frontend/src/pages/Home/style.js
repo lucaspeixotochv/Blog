@@ -9,7 +9,6 @@ export const HomeContainer = styled.div`
 
 export const ArticleContainer = styled.div`
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
   flex-wrap: wrap;
   row-gap: 1.5rem;
@@ -40,6 +39,12 @@ export const ModalTextContainer = styled.div`
 `;
 
 export const Text = styled.div``;
+
+export const Author = styled.p`
+  font-size: 0.7rem;
+  margin-bottom: 0.7rem;
+  color: var(--blue-dark);
+`;
 
 export const ModalTitle = styled.h3`
   font-size: 1.7rem;

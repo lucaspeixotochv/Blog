@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./style";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Article({
   backgroundImg,
@@ -21,8 +23,11 @@ function Article({
       userArea,
     });
   };
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
   return (
-    <S.ArticleContainer onClick={handleClick}>
+    <S.ArticleContainer onClick={handleClick} data-aos="fade-top">
       <S.Image src={backgroundImg} alt="background" />
       <S.Category>{category}</S.Category>
       <S.Title>{title}</S.Title>

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./style";
 import axios from "axios";
 import uuid from "react-uuid";
 import Footer from "../../components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Register({ articles, setArticles }) {
   const [valuebackgroundImg, setValueBackgroundImg] = useState("");
@@ -58,11 +60,15 @@ function Register({ articles, setArticles }) {
     }
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 2000, once: true });
+  }, []);
+
   return (
     <S.RegisterContainer>
-      <S.Title>Novo Artigo</S.Title>
+      <S.Title data-aos="fade-down">Novo Artigo</S.Title>
       <S.Form onSubmit={handleSubmit}>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-right">
           <S.Label htmlFor="userArea">Área de usuário</S.Label>
           <S.Input
             type="text"
@@ -73,7 +79,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-left">
           <S.Label htmlFor="category">Categoria</S.Label>
           <S.Input
             type="text"
@@ -84,7 +90,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-right">
           <S.Label htmlFor="title">Titulo</S.Label>
           <S.Input
             type="text"
@@ -95,7 +101,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-left">
           <S.Label htmlFor="description">Descrição</S.Label>
           <S.Input
             type="text"
@@ -106,7 +112,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-right">
           <S.Label htmlFor="userImg">Imagem de usuário</S.Label>
           <S.Input
             type="text"
@@ -117,7 +123,7 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.FormContainer>
+        <S.FormContainer data-aos="fade-left">
           <S.Label htmlFor="userName">Nome de usuário</S.Label>
           <S.Input
             type="text"
@@ -128,7 +134,8 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.FormContainer>
-        <S.BackgroundContainer>
+        {/* Fade Top não está funcionando */}
+        <S.BackgroundContainer data-aos="fade">
           <S.Label htmlFor="backgroundImg">Link da imagem</S.Label>
           <S.Input
             type="text"
@@ -139,7 +146,8 @@ function Register({ articles, setArticles }) {
             required
           />
         </S.BackgroundContainer>
-        <S.Btn type="submit">
+        {/* Fade Top não está funcionando */}
+        <S.Btn type="submit" data-aos="fade">
           <S.StyledNewsPaperIcon />
           Publicar
         </S.Btn>
