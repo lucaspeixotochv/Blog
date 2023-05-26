@@ -45,6 +45,16 @@ function Home({ articles, setArticles }) {
     }
   };
 
+  const deleteArticle = async (id) => {
+    try {
+      const res = await axios.delete(`http://localhost:8800/${id}`);
+      const newArticlesList = articles.filter((article) => article.id != id);
+      setArticles(newArticlesList);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getArticles();
   }, []);
@@ -81,27 +91,44 @@ function Home({ articles, setArticles }) {
         <DialogContent>{modalData.description}</DialogContent>
         <DialogActions>
           <Button onClick={closeModal}>Sair</Button>
-          <Button>Exluir</Button>
+          <Button
+            onClick={() => {
+              deleteArticle(modalData.id);
+              closeModal();
+            }}
+          >
+            Exluir
+          </Button>
         </DialogActions>
       </Dialog>
       <S.HomeContainer>
         <Header handleSearch={handleSearch} />
         <S.ArticleContainer>
-          {FilterArticles.length > 0
-            ? FilterArticles.map((article) => (
+          {articles.length > 0 ? (
+            FilterArticles.length > 0 ? (
+              FilterArticles.map((article) => (
                 <Article
                   {...article}
                   key={article.id}
                   handleOpenModal={handleOpenModal}
                 />
               ))
-            : articles.map((article) => (
+            ) : (
+              articles.map((article) => (
                 <Article
                   {...article}
                   key={article.id}
                   handleOpenModal={handleOpenModal}
                 />
-              ))}
+              ))
+            )
+          ) : (
+            <S.EmptyArticles>
+              <S.EmptyText>
+                Nenhum artigo públicado ainda <S.Emoji>🤷‍♂️</S.Emoji>
+              </S.EmptyText>
+            </S.EmptyArticles>
+          )}
         </S.ArticleContainer>
         <Footer />
       </S.HomeContainer>

@@ -12,6 +12,7 @@ function Article({
   userName,
   userArea,
   handleOpenModal,
+  id,
 }) {
   const handleClick = () => {
     handleOpenModal({
@@ -21,6 +22,7 @@ function Article({
       userImg,
       userName,
       userArea,
+      id,
     });
   };
   useEffect(() => {

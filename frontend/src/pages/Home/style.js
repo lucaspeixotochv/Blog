@@ -1,8 +1,11 @@
-import { styled } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const HomeContainer = styled.div`
   padding: 3rem 5rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: var(--gradient);
   box-sizing: border-box;
 `;
@@ -65,4 +68,43 @@ export const ModalCloseBtn = styled.button`
   border: none;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   cursor: pointer;
+`;
+
+export const EmptyArticles = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const EmptyText = styled.h3`
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+`;
+
+export const ringAnimation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+`;
+
+export const Emoji = styled.span`
+  animation: ${ringAnimation} 2s infinite;
+  display: inline-block;
 `;

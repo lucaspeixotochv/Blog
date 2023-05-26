@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
 `;
 
 export const Logo = styled.h1`
-  color: var(--blue-dark);
+  color: var(--white);
   text-align: center;
 `;
 

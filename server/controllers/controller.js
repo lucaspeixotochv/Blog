@@ -32,7 +32,19 @@ const addArticles = (req, res) => {
   });
 };
 
+const deleteArticle = (req, res) => {
+  const id = req.params.id;
+  const q = "DELETE FROM articles.articles WHERE id = ?";
+
+  db.query(q, [id], (err) => {
+    if (err) return res.json(err);
+
+    return res.status(200).json("Artigo deletado com sucesso.");
+  });
+};
+
 module.exports = {
   getArticles,
   addArticles,
+  deleteArticle,
 };
