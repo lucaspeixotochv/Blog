@@ -12,6 +12,9 @@ function Header({ handleSearch }) {
       <S.Logo data-aos="fade-right">UCB Technology</S.Logo>
 
       <S.HeaderInputContainer data-aos="fade-left">
+        <S.Button>
+          <S.StyledSearchIcon />
+        </S.Button>
         <S.HeaderSearch
           type="text"
           placeholder="Search"
@@ -19,7 +22,6 @@ function Header({ handleSearch }) {
             handleSearch(e);
           }}
         />
-        <S.StyledSearchIcon />
       </S.HeaderInputContainer>
     </S.HeaderContainer>
   );

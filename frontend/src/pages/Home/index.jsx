@@ -48,6 +48,7 @@ function Home({ articles, setArticles }) {
   useEffect(() => {
     getArticles();
   }, []);
+  // Infinte Get
 
   useEffect(() => {
     const lowercaseSearchValue = value.toLowerCase();

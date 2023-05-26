@@ -27,23 +27,35 @@ export const HeaderList = styled.ul`
 export const HeaderItem = styled.li``;
 
 export const HeaderInputContainer = styled.div`
-  position: relative;
+  display: flex;
+  align-items: center;
 `;
 
+export const Button = styled.button`
+  border-radius: 1rem 0 0 1rem;
+  border: none;
+  background-color: #1f2937;
+  align-self: stretch;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
 export const StyledSearchIcon = styled(AiOutlineSearch)`
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  color: var(--white);
+  font-size: 1.2rem;
 `;
 
 export const HeaderSearch = styled.input`
   background-color: #1f2937;
   border: none;
-  border-radius: 1rem;
-  padding: 0.7rem 1rem 0.7rem 3rem;
+  border-radius: 0 1rem 1rem 0;
+  padding: 0.7rem 0;
   outline: none;
   color: var(--white);
+  flex: 1;
 
   &::placeholder {
     font-size: 1rem;
