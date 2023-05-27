@@ -10,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={<Home articles={articles} setArticles={setArticles} />}
         />
         <Route
